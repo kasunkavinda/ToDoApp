@@ -1,5 +1,6 @@
 import React from "react";
 import ToDoItem from "../ToDoItem/ToDoItem";
+import Footer from "../Footer/Footer";
 
 const dummy_todo_list = [
   { id: 1, checked: false, text: "To do item 1" },
@@ -13,14 +14,11 @@ const ToDoItems = () => {
       {dummy_todo_list.map((dummy_todo) => {
         return (
           <div key={dummy_todo.id}>
-            <ToDoItem
-              id={dummy_todo.id}
-              checked={dummy_todo.checked}
-              text={dummy_todo.text}
-            />
+            <ToDoItem list={dummy_todo} />
           </div>
         );
       })}
+      <Footer length={dummy_todo_list.length} />
     </div>
   );
 };
